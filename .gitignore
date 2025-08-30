@@ -1,3 +1,4 @@
 .direnv/
 bazel*
 result*
+compile_commands.jsoncompile_commands.json
