@@ -25,7 +25,7 @@
         packages.default = pkgs.hello;
         
         # Development shell with Bazel
-        devShells.default = pkgs.mkShell {
+        devShells.default = pkgs.mkShellNoCC {
           buildInputs = with pkgs; [
             bazel_7
             bazel-buildtools  # buildifier, buildozer
