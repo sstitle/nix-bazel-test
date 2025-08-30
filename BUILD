@@ -1,5 +1,1 @@
-cc_binary(
-    name = "hello",
-    srcs = ["hello.cpp"],
-    deps = ["@spdlog//:spdlog"],
-) 
+# Root BUILD file - targets moved to subdirectories 
