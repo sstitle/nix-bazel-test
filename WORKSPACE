@@ -24,7 +24,11 @@ nixpkgs_git_repository(
     sha256 = "",  # This will be filled in by Bazel on first run
 )
 
-# Note: Using system CC toolchain for simplicity
+# Configure CC toolchain from nixpkgs using clang
+nixpkgs_cc_configure(
+    repository = "@nixpkgs",
+    attribute_path = "clang",
+)
 
 # Import spdlog package from nixpkgs
 load("@io_tweag_rules_nixpkgs//nixpkgs:nixpkgs.bzl", "nixpkgs_package")

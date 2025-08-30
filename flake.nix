@@ -29,6 +29,8 @@
           buildInputs = with pkgs; [
             bazel_7
             bazel-buildtools  # buildifier, buildozer
+            clang
+            clang-tools  # clang-format, clang-tidy, etc.
           ];
         };
       };
