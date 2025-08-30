@@ -1,3 +1,8 @@
 # Use C++20 globally
 build --cxxopt=-std=c++20
-build --host_cxxopt=-std=c++20 
+build --host_cxxopt=-std=c++20
+
+# Use hermetic Nix-provided Clang toolchain
+build --host_platform=@io_tweag_rules_nixpkgs//nixpkgs/platforms:host
+build --crosstool_top=@nixpkgs_config_cc//:toolchain
+build --action_env=CC=clang 
