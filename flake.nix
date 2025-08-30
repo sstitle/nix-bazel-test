@@ -23,6 +23,14 @@
 
         # Equivalent to  inputs'.nixpkgs.legacyPackages.hello;
         packages.default = pkgs.hello;
+        
+        # Development shell with Bazel
+        devShells.default = pkgs.mkShell {
+          buildInputs = with pkgs; [
+            bazel_7
+            bazel-buildtools  # buildifier, buildozer
+          ];
+        };
       };
       flake = {
         # The usual flake attributes can be defined here, including system-
