@@ -26,11 +26,11 @@
         
         # Development shell with Bazel
         devShells.default = pkgs.mkShellNoCC {
-          buildInputs = with pkgs; [
-            bazel_7
-            bazel-buildtools  # buildifier, buildozer
+          nativeBuildInputs = with pkgs; [
+            (lib.hiPrio clang-tools)  # prefer this clangd/headers
             clang
-            clang-tools  # clang-format, clang-tidy, etc.
+            bazel_7
+            bazel-buildtools
           ];
         };
       };
